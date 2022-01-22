@@ -19,8 +19,7 @@ public class shooting : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             newbullet = Instantiate(bullet,shootingPoint.position,Quaternion.identity);
-            newbullet.AddComponent<Rigidbody>();
-            newbullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletspeed);
+            newbullet.GetComponent<Rigidbody>().AddForce(Vector3.forward * bulletspeed);
             Destroy (newbullet, 2);
             
         }
