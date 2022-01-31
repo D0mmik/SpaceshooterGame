@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class meteorites : MonoBehaviour
+public class Meteorites : MonoBehaviour
 {
     private float rotationSpeed = 0;
+    public GameObject Explosion;
+    private GameObject ExplosionClone;
 
     void Update()
     {  
@@ -18,7 +20,9 @@ public class meteorites : MonoBehaviour
     {
         if(other.CompareTag("Bullet"))
         {
-            Destroy(this.gameObject);
+          ExplosionClone = Instantiate(Explosion, transform.position, Quaternion.identity) as GameObject;
+          ScoreCounter.Score ++;
+          GameObject.Destroy(this.gameObject);
         }
     }
 }

@@ -3,22 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class playerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {  
     public Rigidbody player;
+    public GameObject DeathScreen;
+    public GameObject Player;
+    public GameObject Explosion;
+    private GameObject ExplosionClone;
     public float Speed = 10f;
     private float horizontal;
     private float vertical;
     
     void Start()
     {
-        
+      DeathScreen.SetActive(false);
     }
-
     void Update()
     {
-      horizontal = Input.GetAxisRaw("Horizontal");
-      vertical = Input.GetAxisRaw("Vertical");
+      horizontal = Input.GetAxis("Horizontal");
+      vertical = Input.GetAxis("Vertical");
 
       player.velocity = new Vector3(horizontal, 0 ,vertical) * Speed * Time.deltaTime;
     }
@@ -26,7 +29,10 @@ public class playerMovement : MonoBehaviour
     {
       if(other.CompareTag("Enemy"))
       {
-         SceneManager.LoadScene("Game");
+        ExplosionClone = Instantiate(Explosion, transform.position, Quaternion.identity) as GameObject;
+        DeathScreen.SetActive(true);
+        Player.SetActive(false);
+        UnityEngine.Cursor.visible = true;
       }
     }
 }
