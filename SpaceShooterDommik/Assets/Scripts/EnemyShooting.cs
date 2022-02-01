@@ -6,22 +6,22 @@ public class EnemyShooting : MonoBehaviour
 { 
   
   private GameObject NewEnemyBullet;
-  [SerializeField] private float BulletSpeed  = 1500f;
+  public float bulletSpeed  = 1500f;
   public GameObject EnemyBullet;
   public Transform ShootingPoint;
   public GameObject Explosion;
   private GameObject ExplosionClone;
-  private double Timer = 0.3;
+  private double timer = 0.3;
 
   void Update()
   {
-    Timer -= Time.deltaTime;
-    if (Timer <= 0f)
+    timer -= Time.deltaTime;
+    if (timer <= 0f)
     { 
         NewEnemyBullet = Instantiate(EnemyBullet,ShootingPoint.position,Quaternion.identity);
-        NewEnemyBullet.GetComponent<Rigidbody>().AddForce(Vector3.back * BulletSpeed);
+        NewEnemyBullet.GetComponent<Rigidbody>().AddForce(Vector3.back * bulletSpeed);
         Destroy (NewEnemyBullet, 2);  
-        Timer = Random.Range(1,3);
+        timer = Random.Range(1,3);
     }   
   }
   void OnTriggerEnter(Collider other)
@@ -29,6 +29,7 @@ public class EnemyShooting : MonoBehaviour
         if(other.CompareTag("Bullet"))
         { 
           ExplosionClone = Instantiate(Explosion, transform.position, Quaternion.identity) as GameObject;
+          Destroy(ExplosionClone,3);
           ScoreCounter.Score ++; 
           Destroy(this.gameObject);
         }

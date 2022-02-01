@@ -21,6 +21,7 @@ public class Meteorites : MonoBehaviour
         if(other.CompareTag("Bullet"))
         {
           ExplosionClone = Instantiate(Explosion, transform.position, Quaternion.identity) as GameObject;
+          Destroy(ExplosionClone,3);
           ScoreCounter.Score ++;
           GameObject.Destroy(this.gameObject);
         }

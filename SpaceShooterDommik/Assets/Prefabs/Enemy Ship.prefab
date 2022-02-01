@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2388d4599b48f8a448e3163906c452df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletSpeed: 1100
+  bulletSpeed: 950
   EnemyBullet: {fileID: 1313413127407962, guid: a6dec75a86bc7433d9072168e9604870,
     type: 3}
   ShootingPoint: {fileID: 4514590413945052}

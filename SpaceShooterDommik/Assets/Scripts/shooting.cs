@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Shooting : MonoBehaviour
-{   public GameObject bullet;
-    private GameObject newbullet;
-    public float BulletSpeed = 1500f;
+{   public GameObject Bullet;
+    private GameObject NewBullet;
+    public float bulletSpeed = 1500f;
     public Transform shootingPoint;
-    private float LastBullet;
-    public float FireRate;
+    private float lastBullet;
+    public float fireRate;
     public AudioSource ShootSound;
     // Start is called before the first frame update
     void Start()
@@ -21,13 +21,13 @@ public class Shooting : MonoBehaviour
     {
         if(Input.GetMouseButton(0))
         {
-            if (Time.time - LastBullet > 1 / FireRate)
+            if (Time.time - lastBullet > 1 / fireRate)
             { 
-                LastBullet = Time.time;
-                newbullet = Instantiate(bullet,shootingPoint.position,Quaternion.identity);
-                newbullet.GetComponent<Rigidbody>().AddForce(Vector3.forward * BulletSpeed);
+                lastBullet = Time.time;
+                NewBullet = Instantiate(Bullet,shootingPoint.position,Quaternion.identity);
+                NewBullet.GetComponent<Rigidbody>().AddForce(Vector3.forward * bulletSpeed);
                 ShootSound.Play();
-                Destroy (newbullet, 2);
+                Destroy (NewBullet, 2);
             }
         }
     }

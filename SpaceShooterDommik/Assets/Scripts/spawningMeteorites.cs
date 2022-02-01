@@ -7,14 +7,14 @@ public class SpawningMeteorites : MonoBehaviour
     private GameObject spawnthis;
     private GameObject clone;
 
-    public GameObject Meteorite1;
-    public GameObject Meteorite2;
-    public GameObject Meteorite3;
+    public GameObject meteorite1;
+    public GameObject meteorite2;
+    public GameObject meteorite3;
     private float min = 0;
     private float max = 3;
     private float number;
-    public double Timer = 0.3;
-    public float Speed = 1500;
+    public double timer = 0.3;
+    public float speed = 1500;
     
     private float minX = -19;
     private float maxX =  19;
@@ -29,27 +29,27 @@ public class SpawningMeteorites : MonoBehaviour
 
         if(number <= 1)
         {
-          spawnthis = Meteorite1;
+          spawnthis = meteorite1;
         }
         else if(number <= 2)
         {
-          spawnthis = Meteorite2;
+          spawnthis = meteorite2;
         }
          else if(number <= 3)
         {
-            spawnthis = Meteorite3;
+            spawnthis = meteorite3;
         }
 
 
 
-        Timer -= Time.deltaTime;
-        if (Timer <= 0f)
+        timer -= Time.deltaTime;
+        if (timer <= 0f)
         { 
           clone = Instantiate(spawnthis,randomPosition,Quaternion.Euler(Random.Range(0, 360),Random.Range(0, 360),Random.Range(0, 360)));
-          clone.GetComponent<Rigidbody>().AddForce(Vector3.back * Speed);
+          clone.GetComponent<Rigidbody>().AddForce(Vector3.back * speed);
           Destroy(clone,7);
          
-          Timer = 0.5;
+          timer = 0.5;
         } 
         
     }
