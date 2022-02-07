@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject Player;
     public GameObject Explosion;
     private GameObject ExplosionClone;
-    public float speed = 10f;
+    public float speed = 6000f;
     private float horizontal;
     private float vertical;
     

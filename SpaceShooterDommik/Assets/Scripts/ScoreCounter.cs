@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
 public class ScoreCounter : MonoBehaviour
 {
     public static int Score = 0;
@@ -11,7 +12,7 @@ public class ScoreCounter : MonoBehaviour
 
     void Start()
     {
-        Score = 0;
+      Score = 0;
     }
     void Update()
     {

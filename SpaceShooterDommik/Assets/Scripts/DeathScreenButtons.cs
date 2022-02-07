@@ -4,7 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class DeathScreenButtons : MonoBehaviour
-{
+{   
+  public GameObject Header;
+  public GameObject Content;
+  public GameObject DeathScreen;
+  public GameObject bg;
     public void RestartButton()
     {
       SceneManager.LoadScene("Game");
@@ -14,5 +18,14 @@ public class DeathScreenButtons : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("exit");
+    }
+    public void LeaderboardButton()
+    {
+      Header.SetActive(true);
+      Content.SetActive(true);
+      DeathScreen.SetActive(false);
+      bg.SetActive(true);
+      UnityEngine.Cursor.visible = true;
+
     }
 }
