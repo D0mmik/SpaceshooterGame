@@ -8,13 +8,20 @@ public class SaveScore : MonoBehaviour
 {   
     public TMP_Text HighScoreText;
     public ScoreManager scoreManager;
+    public GameObject nickname;
+    public GameObject deathscreen;
+    public ScoreCounter scorecounter;
+    
     void Start()
     {   
         if(ScoreCounter.Score >= PlayerPrefs.GetInt("Highscore", 0))
         {
             PlayerPrefs.SetInt("Highscore", ScoreCounter.Score);
-            scoreManager.AddScore(new Score("Dominik",ScoreCounter.Score));
+            nickname.SetActive(true);
+            HighScoreText.text = PlayerPrefs.GetInt("Highscore", 0).ToString();
+            deathscreen.SetActive(false);
+
+            
         }
-        HighScoreText.text = PlayerPrefs.GetInt("Highscore", 0).ToString();
     }
 }

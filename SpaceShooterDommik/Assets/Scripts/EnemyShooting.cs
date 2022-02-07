@@ -12,6 +12,7 @@ public class EnemyShooting : MonoBehaviour
   public GameObject Explosion;
   private GameObject ExplosionClone;
   private double timer = 0.3;
+  
 
   void Update()
   {

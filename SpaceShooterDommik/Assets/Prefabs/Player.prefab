@@ -9631,7 +9631,7 @@ MonoBehaviour:
   DeathScreen: {fileID: 0}
   Player: {fileID: 1837393518848355980}
   Explosion: {fileID: 100008, guid: a93496017806b7740910df5fd946f306, type: 3}
-  speed: 6000
+  speed: 450
 --- !u!114 &1409409501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9645,7 +9645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 1282951138962222, guid: cef2071c0889c43a49b25b26abb07dd1, type: 3}
-  bulletSpeed: 1500
+  bulletSpeed: 900
   shootingPoint: {fileID: 606679868}
   fireRate: 5
   ShootSound: {fileID: 409528541}

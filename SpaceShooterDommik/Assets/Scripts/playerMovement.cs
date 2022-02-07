@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     {
       DeathScreen.SetActive(false);
     }
-    void Update()
+    void FixedUpdate()
     {
       horizontal = Input.GetAxis("Horizontal");
       vertical = Input.GetAxis("Vertical");
