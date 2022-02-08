@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -18,10 +18,8 @@ public class SaveScore : MonoBehaviour
         {
             PlayerPrefs.SetInt("Highscore", ScoreCounter.Score);
             nickname.SetActive(true);
-            HighScoreText.text = PlayerPrefs.GetInt("Highscore", 0).ToString();
             deathscreen.SetActive(false);
-
-            
         }
+        HighScoreText.text = PlayerPrefs.GetInt("Highscore", 0).ToString();
     }
 }

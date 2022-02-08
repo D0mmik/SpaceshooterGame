@@ -16,8 +16,9 @@ public class SpawnEnemyShip : MonoBehaviour
 
     public GameObject Ship;
     private GameObject ShipClone;
+    private Rigidbody rbship;
 
-    void Update()
+    void FixedUpdate()
     {
         randomPosition = new Vector3(Random.Range(minX, maxX), 0,Random.Range(minZ, maxZ));
         randomDirection = Random.Range(0,2)*2-1;
@@ -26,7 +27,8 @@ public class SpawnEnemyShip : MonoBehaviour
         if (timer <= 0)
         { 
           ShipClone = Instantiate(Ship,randomPosition,Quaternion.identity);
-          ShipClone.GetComponent<Rigidbody>().velocity = new Vector3(randomDirection, 0 ,-1) * speed * Time.deltaTime;   
+          rbship = ShipClone.GetComponent<Rigidbody>();
+          rbship.velocity = new Vector3(randomDirection, 0 ,-1) * speed * Time.deltaTime;   
           StartCoroutine(ChangeDiretion());
           Destroy(ShipClone,10);
           timer = 2;  //za jak dlouho se spawne EnemyShip
@@ -39,8 +41,7 @@ public class SpawnEnemyShip : MonoBehaviour
       yield return new WaitForSeconds(Random.Range(1,4));
       if (ShipClone != null)
       {
-        ShipClone.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
-        ShipClone.GetComponent<Rigidbody>().velocity = new Vector3(randomDirection, 0 ,-1) * speed * Time.deltaTime;
+        rbship.velocity = new Vector3(randomDirection, 0 ,-1) * 5;
       }
     }
 }

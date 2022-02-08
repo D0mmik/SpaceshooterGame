@@ -8,10 +8,10 @@ public class Name : MonoBehaviour
 {   
     public TMP_InputField inputNick;
     public ScoreManager scoremanager;
-    public ScoreCounter scorecounter;
     public void SubmitButton()
     {
         scoremanager.AddScore(new Score(inputNick.text,ScoreCounter.Score));
+        SceneManager.LoadScene("Game");
     }
     public void CloseButton()
     {

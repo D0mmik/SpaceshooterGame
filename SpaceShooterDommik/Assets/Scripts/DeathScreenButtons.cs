@@ -9,6 +9,7 @@ public class DeathScreenButtons : MonoBehaviour
   public GameObject Content;
   public GameObject DeathScreen;
   public GameObject bg;
+  public GameObject settings;
     public void RestartButton()
     {
       SceneManager.LoadScene("Game");
@@ -25,7 +26,10 @@ public class DeathScreenButtons : MonoBehaviour
       Content.SetActive(true);
       DeathScreen.SetActive(false);
       bg.SetActive(true);
-      UnityEngine.Cursor.visible = true;
-
+    }
+    public void SettingsButton()
+    {
+      settings.SetActive(true);
+      DeathScreen.SetActive(false);
     }
 }

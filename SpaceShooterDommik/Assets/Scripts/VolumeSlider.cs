@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class VolumeSlider : MonoBehaviour
 {
@@ -17,7 +18,12 @@ public class VolumeSlider : MonoBehaviour
   public void Volume()
   {
     AudioListener.volume = volumeSlider.value;
+  }
+  public void SaveVolume()
+  {
     PlayerPrefs.SetFloat("musicVolume", volumeSlider.value);
+    SceneManager.LoadScene("Game");
+
   }
   void Update()
   {

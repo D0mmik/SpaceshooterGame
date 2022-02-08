@@ -22,7 +22,7 @@ public class EnemyShooting : MonoBehaviour
         NewEnemyBullet = Instantiate(EnemyBullet,ShootingPoint.position,Quaternion.identity);
         NewEnemyBullet.GetComponent<Rigidbody>().AddForce(Vector3.back * bulletSpeed);
         Destroy (NewEnemyBullet, 2);  
-        timer = Random.Range(1,3);
+        timer = Random.Range(1,2);
     }   
   }
   void OnTriggerEnter(Collider other)

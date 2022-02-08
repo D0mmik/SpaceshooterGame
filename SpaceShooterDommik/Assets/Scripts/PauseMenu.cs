@@ -7,6 +7,10 @@ public class PauseMenu : MonoBehaviour
 {   public static bool isPaused = false;
     public GameObject Menu;
     public GameObject DeathScreen;
+    public GameObject settings;
+    public GameObject leaderboard;
+    
+    public GameObject nickname;
     public AudioSource Music;
 
     void Start()
@@ -38,7 +42,7 @@ public class PauseMenu : MonoBehaviour
           
         }
 
-        if(isPaused || DeathScreen.activeSelf == true)
+        if(isPaused || DeathScreen.activeSelf == true || settings.activeSelf == true || leaderboard.activeSelf == true || nickname.activeSelf == true)
             {
                 UnityEngine.Cursor.visible = true;              
             }
@@ -46,7 +50,7 @@ public class PauseMenu : MonoBehaviour
             {
                 UnityEngine.Cursor.visible = false;
             }
-    }
+        }
     public void Resume()
     {
       Menu.SetActive(false);

@@ -22,6 +22,7 @@ public class ScoreManager : MonoBehaviour
   private void OnDestroy()
   {
     SaveScore();
+    Debug.Log("saved");
   }
   public void SaveScore()
   {
@@ -30,7 +31,7 @@ public class ScoreManager : MonoBehaviour
   }
   public void ScoreReset()
   {
-      sd.scores.Clear();
+    sd.scores.Clear();
   }
 }
 
