@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 135117207130104304}
   - component: {fileID: 82889027971564698}
   - component: {fileID: 7398753678342420498}
+  - component: {fileID: 4104488922567870186}
   m_Layer: 0
   m_Name: Enemy Ship
   m_TagString: Enemy
@@ -259,8 +260,19 @@ MonoBehaviour:
     type: 3}
   ShootingPoint: {fileID: 4514590413945052}
   Explosion: {fileID: 100012, guid: 384371afbb4354cc9a3fc68eab303756, type: 3}
-  scorecounter: {fileID: 5002380752269964457, guid: cf4af1b453d9f4e4496f9345f14c5094,
-    type: 3}
+  weaponEnemy: {fileID: 82889027971564698}
+--- !u!114 &4104488922567870186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093887268274868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5684d61c7fe1144bb1b5165a8d780f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1351048805008026
 GameObject:
   m_ObjectHideFlags: 0

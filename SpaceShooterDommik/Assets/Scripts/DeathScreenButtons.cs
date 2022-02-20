@@ -5,11 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class DeathScreenButtons : MonoBehaviour
 {   
-  public GameObject Header;
-  public GameObject Content;
+  public GameObject Leaderboard;
   public GameObject DeathScreen;
-  public GameObject bg;
   public GameObject settings;
+  public GameObject scoretext;
     public void RestartButton()
     {
       SceneManager.LoadScene("Game");
@@ -17,19 +16,19 @@ public class DeathScreenButtons : MonoBehaviour
     }
     public void ExitButton()
     {
-        Application.Quit();
-        Debug.Log("exit");
+      Application.Quit();
+      Debug.Log("exit");
     }
     public void LeaderboardButton()
     {
-      Header.SetActive(true);
-      Content.SetActive(true);
+      Leaderboard.SetActive(true);
       DeathScreen.SetActive(false);
-      bg.SetActive(true);
+      scoretext.SetActive(false);
     }
     public void SettingsButton()
     {
       settings.SetActive(true);
       DeathScreen.SetActive(false);
+      scoretext.SetActive(false);
     }
 }

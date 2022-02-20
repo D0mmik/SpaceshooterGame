@@ -10,6 +10,8 @@ public class Shooting : MonoBehaviour
     private float lastBullet;
     public float fireRate;
     public AudioSource ShootSound;
+    public GameObject settings;
+    public GameObject pausemenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,7 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButton(0))
+        if(Input.GetMouseButton(0) && pausemenu.activeSelf == false && settings.activeSelf == false)
         {
             if (Time.time - lastBullet > 1 / fireRate)
             { 

@@ -29,4 +29,5 @@ public class VolumeSlider : MonoBehaviour
   {
     volumeText.text = volumeSlider.value.ToString("F2");
   }
+  
 }

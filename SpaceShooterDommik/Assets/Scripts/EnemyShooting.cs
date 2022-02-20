@@ -12,6 +12,7 @@ public class EnemyShooting : MonoBehaviour
   public GameObject Explosion;
   private GameObject ExplosionClone;
   private double timer = 0.3;
+  public AudioSource weaponEnemy;
   
 
   void Update()
@@ -21,8 +22,9 @@ public class EnemyShooting : MonoBehaviour
     { 
         NewEnemyBullet = Instantiate(EnemyBullet,ShootingPoint.position,Quaternion.identity);
         NewEnemyBullet.GetComponent<Rigidbody>().AddForce(Vector3.back * bulletSpeed);
+        weaponEnemy.Play();
         Destroy (NewEnemyBullet, 2);  
-        timer = Random.Range(1,2);
+        timer = Random.Range(0.5f,1.5f);
     }   
   }
   void OnTriggerEnter(Collider other)

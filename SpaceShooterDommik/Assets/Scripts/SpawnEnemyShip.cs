@@ -20,22 +20,23 @@ public class SpawnEnemyShip : MonoBehaviour
 
     void FixedUpdate()
     {
-        randomPosition = new Vector3(Random.Range(minX, maxX), 0,Random.Range(minZ, maxZ));
-        randomDirection = Random.Range(0,2)*2-1;
+      randomPosition = new Vector3(Random.Range(minX, maxX), 0,Random.Range(minZ, maxZ));
+      randomDirection = Random.Range(0,2)*2-1;
 
-        timer -= Time.deltaTime;
-        if (timer <= 0)
-        { 
-          ShipClone = Instantiate(Ship,randomPosition,Quaternion.identity);
-          rbship = ShipClone.GetComponent<Rigidbody>();
-          rbship.velocity = new Vector3(randomDirection, 0 ,-1) * speed * Time.deltaTime;   
-          StartCoroutine(ChangeDiretion());
-          Destroy(ShipClone,10);
-          timer = 2;  //za jak dlouho se spawne EnemyShip
-        } 
-        
+      timer -= Time.deltaTime;
+      if (timer <= 0)
+      { 
+       ShipClone = Instantiate(Ship,randomPosition,Quaternion.identity);
+        rbship = ShipClone.GetComponent<Rigidbody>();
+        rbship.velocity = new Vector3(randomDirection, 0 ,-1) * speed * Time.deltaTime;   
+        StartCoroutine(ChangeDiretion());
+        Destroy(ShipClone,10);
+        timer = 1.5;  //za jak dlouho se spawne EnemyShip
+      } 
+      
 
     }
+    
     IEnumerator ChangeDiretion()
     {
       yield return new WaitForSeconds(Random.Range(1,4));
@@ -43,5 +44,6 @@ public class SpawnEnemyShip : MonoBehaviour
       {
         rbship.velocity = new Vector3(randomDirection, 0 ,-1) * 5;
       }
+      
     }
 }

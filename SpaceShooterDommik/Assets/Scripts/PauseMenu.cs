@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {   public static bool isPaused = false;
@@ -12,6 +13,8 @@ public class PauseMenu : MonoBehaviour
     
     public GameObject nickname;
     public AudioSource Music;
+    public Slider volumeSlider;
+    public GameObject scoretext;
 
     void Start()
     {
@@ -21,7 +24,7 @@ public class PauseMenu : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && DeathScreen.activeSelf == false)
+        if(Input.GetKeyDown(KeyCode.Escape) && DeathScreen.activeSelf == false && leaderboard.activeSelf == false && settings.activeSelf == false)
         {
             if(isPaused)
             {
@@ -35,11 +38,14 @@ public class PauseMenu : MonoBehaviour
             }
         }
 
-        if(Input.GetKey(KeyCode.R))
+        if(Input.GetKey(KeyCode.R) && nickname.activeSelf == false)
         {
           SceneManager.LoadScene("Game");
-          Time.timeScale = 1f;
-          
+          Time.timeScale = 1f;      
+        }
+        if(Input.GetKey(KeyCode.P) && nickname.activeSelf == false)
+        {
+        PlayerPrefs.SetInt("Highscore", 0);
         }
 
         if(isPaused || DeathScreen.activeSelf == true || settings.activeSelf == true || leaderboard.activeSelf == true || nickname.activeSelf == true)
@@ -74,4 +80,22 @@ public class PauseMenu : MonoBehaviour
         Application.Quit();
         Debug.Log("quit1");
     }
+    public void BackButton()  //deathscreen
+    {
+       DeathScreen.SetActive(true);
+       leaderboard.SetActive(false);
+       scoretext.SetActive(true);
+    }
+    public void BackButtonSlider()  //settings
+    {
+       PlayerPrefs.SetFloat("musicVolume", volumeSlider.value);
+       DeathScreen.SetActive(true);
+       settings.SetActive(false);
+       scoretext.SetActive(true);
+    }
+    public void MenuButton()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+    
 }

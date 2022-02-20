@@ -26,4 +26,5 @@ public class Meteorites : MonoBehaviour
           GameObject.Destroy(this.gameObject);
         }
     }
+    
 }
