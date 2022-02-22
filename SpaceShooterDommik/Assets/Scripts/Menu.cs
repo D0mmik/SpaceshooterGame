@@ -11,12 +11,13 @@ public class Menu : MonoBehaviour
     public GameObject buttonsUI;
     void Awake() 
     {
-       Application.targetFrameRate = 240;
+       Application.targetFrameRate = 300;
     }
     public void PlayButton()
     {
       SceneManager.LoadScene("Game");
       Time.timeScale = 1f;
+      volumeSlider.value = PlayerPrefs.GetFloat("musicVolume", 1);
     }
     public void SettingsButton()
     {

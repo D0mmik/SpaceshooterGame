@@ -22,7 +22,7 @@ public class ScoreManager : MonoBehaviour
   private void OnDestroy()
   {
     SaveScore();
-    Debug.Log("saved");
+    //Debug.Log("saved");
   }
   public void SaveScore()
   {

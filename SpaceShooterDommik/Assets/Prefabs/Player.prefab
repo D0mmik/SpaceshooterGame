@@ -9632,6 +9632,7 @@ MonoBehaviour:
   Player: {fileID: 1837393518848355980}
   Explosion: {fileID: 100008, guid: a93496017806b7740910df5fd946f306, type: 3}
   speed: 700
+  scorecounter: {fileID: 0}
 --- !u!114 &1409409501
 MonoBehaviour:
   m_ObjectHideFlags: 0

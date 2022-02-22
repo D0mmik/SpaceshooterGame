@@ -35,6 +35,7 @@ public class EnemyShooting : MonoBehaviour
           Destroy(ExplosionClone,3);
           ScoreCounter.Score ++; 
           Destroy(this.gameObject);
+          Destroy(other.gameObject);
         }
     }
     

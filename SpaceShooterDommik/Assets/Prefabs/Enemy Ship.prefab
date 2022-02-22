@@ -261,6 +261,7 @@ MonoBehaviour:
   ShootingPoint: {fileID: 4514590413945052}
   Explosion: {fileID: 100012, guid: 384371afbb4354cc9a3fc68eab303756, type: 3}
   weaponEnemy: {fileID: 82889027971564698}
+  scorecounter: {fileID: 0}
 --- !u!114 &4104488922567870186
 MonoBehaviour:
   m_ObjectHideFlags: 0

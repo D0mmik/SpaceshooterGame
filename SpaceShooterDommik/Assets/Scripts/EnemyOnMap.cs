@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Colliding : MonoBehaviour
+public class EnemyOnMap : MonoBehaviour
 {   private Rigidbody rb;
     void Start()
     {
-        rb = this.GetComponent<Rigidbody>();
+      rb = this.GetComponent<Rigidbody>();
     }
     void OnTriggerEnter(Collider other)
     {

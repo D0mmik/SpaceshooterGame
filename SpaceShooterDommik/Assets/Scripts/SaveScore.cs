@@ -10,7 +10,6 @@ public class SaveScore : MonoBehaviour
     public ScoreManager scoreManager;
     public GameObject nickname;
     public GameObject deathscreen;
-    public ScoreCounter scorecounter;
     
     void Start()
     {   
